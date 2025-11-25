@@ -1,0 +1,42 @@
+.header_row {
+  max-width: 2000px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 12px 0;
+  background-color: #f9fafb;
+  border-bottom: 1px solid #e5e8eb;
+  font-family: 'Noto Sans KR', sans-serif;
+  box-sizing: border-box;
+}
+
+.select_month {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prevButton,
+.nextButton {
+  padding: 6px 12px;
+  font-size: 0.95rem;
+  background-color: #ffffff;
+  border: 1px solid #d1d6db;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #333d4b;
+  transition: background-color 0.2s ease;
+}
+
+.prevButton:hover,
+.nextButton:hover {
+  background-color: #333d4b;
+  color : white;
+}
+
+.year_month {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1e1f21;
+  text-align: center;
+  flex-grow: 1;
+}

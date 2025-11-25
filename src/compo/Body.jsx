@@ -1,5 +1,6 @@
+import "./Body.css";
 import { startOfMonth, endOfMonth, startOfWeek, endOfWeek } from "date-fns";
-import { isSameMonth, isSameDay, addDays, parse, format } from "date-fns";
+import { isSameMonth, isSameDay, addDays, format } from "date-fns";
 
 const Body = ({ currentMonth, selectedDate, setSelectedDate }) => {
     const monthStart = startOfMonth(currentMonth);  // 현재달의 시작일
@@ -14,6 +15,7 @@ const Body = ({ currentMonth, selectedDate, setSelectedDate }) => {
 
     const onDateClick = (day) => {
         setSelectedDate(day);
+        console.log(day);
     };
 
     // day(날짜)가 endDate(달력표시의 마지막날)보다 작거나 같을 동안 반복
@@ -34,7 +36,7 @@ const Body = ({ currentMonth, selectedDate, setSelectedDate }) => {
                         : "valid"
                     }`}
                     key = {day}
-                    onClick={() => onDateClick(parse(cloneDay))}
+                    onClick={(e) => onDateClick(e.currentTarget = cloneDay)}
                 >
                     <span
                         className = {
