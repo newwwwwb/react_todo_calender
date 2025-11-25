@@ -1,0 +1,19 @@
+.top-toggle {
+  display: flex;
+  gap: 8px;
+  margin: 8px 0 12px;
+}
+
+.top-toggle button {
+  padding: 8px 12px;
+  border: 1px solid #E5E8EB;
+  background: #F9FAFB;
+  color: #333D4B;
+  border-radius: 6px;
+}
+
+.top-toggle button.active {
+  border-color: #0064FF;
+  background: #E8F1FF;
+  color: #0064FF;
+}
