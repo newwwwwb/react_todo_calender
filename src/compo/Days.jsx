@@ -1,5 +1,6 @@
 import "./Days.css";
-import { useMemo } from "react"
+import { useMemo } from "react";
+import React from "react";
 
 const Days = () => {
 
@@ -12,17 +13,10 @@ const Days = () => {
             </div>
         ))
     }, [dayNames])
-
-    // for(let i = 0; i < 7; i++){
-    //     days.push(
-    //         <div className = "day">
-    //             {dayNames[i]} 
-    //         </div>);
-    // }
-
+    
     return(
         <div className="days_row">{days}</div>
     );
 };
 
-export default Days;
+export default React.memo(Days);

@@ -35,7 +35,6 @@
 }
 
 .body_cell.selected {
-  border: 2px solid #0064FF;       /* 토스 블루 테두리 */
   background-color: #E8F1FF;       /* 연한 블루 배경 */
   color: #0064FF;                  /* 텍스트도 토스 블루 */
   transform: scale(1.02);          /* 선택 시 살짝 확대 */
@@ -90,4 +89,10 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.todo-item.completed {
+  text-decoration: line-through;
+  color: #A0A8B0;
+  opacity: 0.6;
 }

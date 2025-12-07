@@ -98,8 +98,8 @@ function Sidebar({
       ) : (
         <>
           <div className="ledger-summary">
-            <span>수입 +{income}원</span>
-            <span>지출 -{expense}원</span>
+            <span>수입 +{income}원</span><br/>
+            <span>지출 -{expense}원</span><br/>
             <span>잔액 {balance}원</span>
           </div>
 

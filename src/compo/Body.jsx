@@ -56,25 +56,24 @@ const Body = ({ currentMonth, selectedDate, setSelectedDate, viewMode, dataByDat
           {/* 요약 렌더링 */}
           {viewMode === 'todo' &&
             visible.map(item => (
-              <div key={item.id} className="todo-item">
+              <div key={item.id} className={`todo-item ${item.completed ? 'completed' : ''}`}>
                 {item.text}
               </div>
             ))
           }
 
-          {viewMode === 'ledger' &&
-            visible.map(item => (
-              <div
-                key={item.id}
-                className={item.type === 'income' ? 'entry-income' : 'entry-expense'}
-              >
-                {item.type === 'income' ? '+' : '-'}
-                {item.amount}원 {item.text}
-              </div>
-            ))
-          }
+          {viewMode === 'ledger' && dayData.ledger.length > 0 && (() => {
+            const income = dayData.ledger.filter(l => l.type === 'income').reduce((s, l) => s + l.amount, 0);
+            const expense = dayData.ledger.filter(l => l.type === 'expense').reduce((s, l) => s + l.amount, 0);
+            return (
+              <>
+                {income > 0 && <div className="entry-income">+{income}원</div>}
+                {expense > 0 && <div className="entry-expense">-{expense}원</div>}
+              </>
+            );
+          })()}
 
-          {hiddenCount > 0 && (
+          {hiddenCount > 0 && viewMode === 'todo' && (
             <button
               className="more-indicator"
               type="button"

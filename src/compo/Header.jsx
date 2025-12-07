@@ -1,5 +1,6 @@
 import "./Header.css";
 import { format, subMonths, addMonths } from 'date-fns';
+import React from "react";
 
 const Header = ({currentMonth, setCurrentMonth}) => {
 
@@ -28,4 +29,4 @@ const Header = ({currentMonth, setCurrentMonth}) => {
     );
 };
 
-export default Header;
+export default React.memo(Header);
